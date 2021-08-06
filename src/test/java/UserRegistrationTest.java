@@ -127,5 +127,23 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validatePassword("kaviya$144");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(false,result);
+
+    }
+    //UC7 Password Should Contain One Numeric Number
+    //Test To Password Does Have One Numeric Number And 8 Characters Return True
+    @Test
+    public void givenPassword_ShouldHaveOneNumericNbr_AndContainsEightDigits_ReturnTrue() {
+        //Checking Validate Password With Pattern And Storing In result
+        boolean result = userRegistration.validatePassword("Kaviya$144");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertEquals(true,result);
+    }
+    //Test To Password Does Not Have One Numeric Number And 8 Characters Return True
+    @Test
+    public void givenPassword_ShouldNotHaveOneNumericNbr_AndContainsEightDigits_ReturnFalse() {
+        //Checking Validate Password With Pattern And Storing In result
+        boolean result = userRegistration.validatePassword("kaviya$rdy");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertEquals(false,result);
     }
 }
