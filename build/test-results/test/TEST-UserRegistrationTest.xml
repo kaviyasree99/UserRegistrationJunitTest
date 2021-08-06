@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="UserRegistrationTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-08-06T09:28:37" hostname="KAVIYA-LAPTOP" time="0.035">
+<testsuite name="UserRegistrationTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-08-06T10:22:17" hostname="KAVIYA-LAPTOP" time="0.056">
   <properties/>
-  <testcase name="givenPhoneNumber_StartWithCountryCode_ReturnTrue()" classname="UserRegistrationTest" time="0.022"/>
+  <testcase name="givenPassword_DoesNotContainsEightDigits_ReturnFalse()" classname="UserRegistrationTest" time="0.037"/>
+  <testcase name="givenPhoneNumber_StartWithCountryCode_ReturnTrue()" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenPhoneNumber_DoesNotHave10Numbers_ReturnFalse()" classname="UserRegistrationTest" time="0.001"/>
-  <testcase name="givenLastName_Return_True()" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="givenLastName_Return_True()" classname="UserRegistrationTest" time="0.002"/>
   <testcase name="givenFirstName_Return_False()" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenFirstName_Return_True()" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenEmail_StartsWithCapLetter_ReturnFalse()" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenEmail_EndsWithCom_ReturnTrue()" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenPhoneNumber_DoesHave10Numbers_ReturnTrue()" classname="UserRegistrationTest" time="0.001"/>
   <testcase name="givenLastName_Return_False()" classname="UserRegistrationTest" time="0.001"/>
-  <testcase name="givenEmail_StartsWithSmallLetter_ReturnTrue()" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPassword_ContainsEightDigits_ReturnTrue()" classname="UserRegistrationTest" time="0.001"/>
+  <testcase name="givenEmail_StartsWithSmallLetter_ReturnTrue()" classname="UserRegistrationTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

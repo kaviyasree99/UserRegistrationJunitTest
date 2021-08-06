@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 public class UserRegistrationTest {
     //Defining User Registration
     UserRegistration userRegistration = new UserRegistration();
+
     //Test To Valid FirstName Starts With Cap Letter And It Has Min 3 Letters
     @Test
     //Validation Of First Name And Return True
@@ -29,7 +30,7 @@ public class UserRegistrationTest {
     @Test
     public void givenLastName_Return_True() {
         //Checking Validate LastName With Pattern And Storing In result
-        userRegistration.validateLastName("Sree");
+        userRegistration.validateLastName("Reddy");
         boolean result = userRegistration.validateFirstName("Sree");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(true, result);
@@ -54,7 +55,7 @@ public class UserRegistrationTest {
     @Test
     public void givenEmail_StartsWithCapLetter_ReturnFalse() {
         //Checking Validate Email With Pattern And Storing In result
-        boolean result = userRegistration.validateemail("Kaviyarajalingam@gmail.com");
+        boolean result = userRegistration.validateemail("Kaviyarajalingam");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(false, result);
     }
@@ -71,7 +72,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPhoneNumber_StartWithCountryCode_ReturnTrue() {
         //Checking Validate Phone Number With Pattern And Storing In result
-        boolean result = userRegistration.validatePhoneNumber("91 9876543219");
+        boolean result = userRegistration.validatePhoneNumber("91 9790543056");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(true, result);
     }
@@ -79,7 +80,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPhoneNumber_DoesNotHave10Numbers_ReturnFalse() {
         //Checking Validate Phone Number With Pattern And Storing In result
-        boolean result = userRegistration.validatePhoneNumber("91 987654321");
+        boolean result = userRegistration.validatePhoneNumber("91 97905430985");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(false, result);
     }
@@ -87,8 +88,26 @@ public class UserRegistrationTest {
     @Test
     public void givenPhoneNumber_DoesHave10Numbers_ReturnTrue() {
         //Checking Validate Phone Number With Pattern And Storing In result
-        boolean result = userRegistration.validatePhoneNumber("91 9876543219");
+        boolean result = userRegistration.validatePhoneNumber("91 9790543056");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(true, result);
+    }
+
+    //UC5
+    //Test To Password Does Have 8Characters Return True
+    @Test
+    public void givenPassword_ContainsEightDigits_ReturnTrue() {
+        //Checking Validate Password With Pattern And Storing In result
+        boolean result = userRegistration.validatePassword("Kaviya$145");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertEquals(true,result);
+    }
+    //Test To Password Does Not Have 8Characters Return False
+    @Test
+    public void givenPassword_DoesNotContainsEightDigits_ReturnFalse() {
+        //Checking Validate Password With Pattern And Storing In result
+        boolean result = userRegistration.validatePassword("kaviya$144");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertEquals(false,result);
     }
 }
