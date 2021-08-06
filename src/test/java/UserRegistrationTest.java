@@ -30,7 +30,7 @@ public class UserRegistrationTest {
     @Test
     public void givenLastName_Return_True() {
         //Checking Validate LastName With Pattern And Storing In result
-        userRegistration.validateLastName("Reddy");
+        userRegistration.validateLastName("Sree");
         boolean result = userRegistration.validateFirstName("Sree");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(true, result);
@@ -55,7 +55,7 @@ public class UserRegistrationTest {
     @Test
     public void givenEmail_StartsWithCapLetter_ReturnFalse() {
         //Checking Validate Email With Pattern And Storing In result
-        boolean result = userRegistration.validateemail("Kaviyarajalingam");
+        boolean result = userRegistration.validateemail("Kaviyarajalingam@gmail.com");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(false, result);
     }
@@ -80,7 +80,7 @@ public class UserRegistrationTest {
     @Test
     public void givenPhoneNumber_DoesNotHave10Numbers_ReturnFalse() {
         //Checking Validate Phone Number With Pattern And Storing In result
-        boolean result = userRegistration.validatePhoneNumber("91 97905430985");
+        boolean result = userRegistration.validatePhoneNumber("91 979054305");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertEquals(false, result);
     }
@@ -105,6 +105,24 @@ public class UserRegistrationTest {
     //Test To Password Does Not Have 8Characters Return False
     @Test
     public void givenPassword_DoesNotContainsEightDigits_ReturnFalse() {
+        //Checking Validate Password With Pattern And Storing In result
+        boolean result = userRegistration.validatePassword("kaviya$144");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertEquals(false,result);
+    }
+
+    //UC6 Password Should Contain One UpperCase Letter
+    //Test To Password Does Have One UpperCase And 8 Characters Return True
+    @Test
+    public void givenPassword_ShouldHaveOneUpperCase_AndContainsEightDigits_ReturnTrue() {
+        //Checking Validate Password With Pattern And Storing In result
+        boolean result = userRegistration.validatePassword("Kaviya$144");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertEquals(true,result);
+    }
+    //Test To Password Does Not Have UpperCase And 8 Characters Return False
+    @Test
+    public void givenPassword_ShouldNotHaveOneUpperCase_AndContainsEightDigits_ReturnFalse() {
         //Checking Validate Password With Pattern And Storing In result
         boolean result = userRegistration.validatePassword("kaviya$144");
         //Asserting The Result As Boolean Type True Or False
